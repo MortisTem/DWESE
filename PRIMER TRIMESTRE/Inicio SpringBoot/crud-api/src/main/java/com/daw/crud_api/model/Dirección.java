@@ -7,8 +7,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
+@Getter 
+@Setter 
+@ToString
+@AllArgsConstructor 
 public class Dirección {
 
     @Id
@@ -31,7 +39,7 @@ public class Dirección {
     @ManyToOne
     //Usamos JoinColumn para especificar el nombre de la fk, apunta automáticamnente al
     //id de la tabla cliente porque usamos la clase Cliente.
-    //Ponemos nullable false ya que no puede haber direcciines sin clientes asignados.
+    //Ponemos nullable false ya que no puede haber direcciines sin clientes
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 }
