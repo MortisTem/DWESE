@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import com.daw.crud_api.model.Producto;
 import com.daw.crud_api.repository.ProductoRepository;
  
-@RestController                    // Las respuestas se devuelven como JSON
-@RequestMapping("/api/productos")  // Prefijo común de todas las URL
+@RestController                    //Las respuestas se devuelven como JSON.
+@RequestMapping("/api/productos")  //Prefijo común de todas las URL.
 public class ProductoController {
     private final ProductoRepository productoRepository;
  
