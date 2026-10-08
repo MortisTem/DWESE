@@ -21,7 +21,7 @@ import lombok.ToString;
 @Setter 
 @ToString 
 @AllArgsConstructor 
-@Table(indexes = @Index(name = "idx_email", columnList = "email"))
+@Table(indexes = @Index(name = "id_email", columnList = "email"))
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,6 +48,5 @@ public class Cliente {
         direcciones.add(direccion);
         //Le decimos que la dirección pertenece a este cliente.
         direccion.setCliente(this);
-    }
-    
+    } 
 }

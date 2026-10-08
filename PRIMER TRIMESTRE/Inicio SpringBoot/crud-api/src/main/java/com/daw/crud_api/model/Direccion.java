@@ -17,7 +17,7 @@ import lombok.ToString;
 @Setter 
 @ToString
 @AllArgsConstructor 
-public class Dirección {
+public class Direccion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
