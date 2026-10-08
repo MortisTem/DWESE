@@ -13,10 +13,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Getter 
-@Setter 
+@Getter
+@Setter
 @ToString
-@AllArgsConstructor 
+@AllArgsConstructor
 public class Direccion {
 
     @Id
@@ -35,11 +35,14 @@ public class Direccion {
     @Column(nullable = false)
     private String codigoPostal;
 
-    //Una dirección tiene muchos clientes.
+    // Una direccion tiene muchos clientes
     @ManyToOne
-    //Usamos JoinColumn para especificar el nombre de la fk, apunta automáticamnente al
-    //id de la tabla cliente porque usamos la clase Cliente.
-    //Ponemos nullable false ya que no puede haber direcciines sin clientes
+    // usamos JoinColumn para especificar el nombre de la fk, apunta automaticamente
+    // al
+    // id de la tabla cliente porque usamos la clase Cliente
+    // Ponemos nullable false ya que no puede haber direcciones sin clientes
+    // asignado
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
+
 }
