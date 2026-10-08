@@ -49,4 +49,19 @@ public class Cliente {
         //Le decimos que la dirección pertenece a este cliente.
         direccion.setCliente(this);
     } 
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Pedido> pedidos;
+
+    /**
+    * Función para añadir corractamente un pedido a este cliente.
+    * @param pedido
+    */
+
+    public void addPedido(Pedido pedido){
+        //Añadimos el pedido a la lista de pedidos a este cliente.
+        pedidos.add(pedido);
+        //
+        pedido.setCliente((this));
+    }
 }

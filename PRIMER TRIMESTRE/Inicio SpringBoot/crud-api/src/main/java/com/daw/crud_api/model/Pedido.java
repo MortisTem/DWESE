@@ -40,4 +40,9 @@ public class Pedido {
     @JoinColumn(name = "direccion_id", nullable = false)
     private Direccion direccion;
 
+    //Forzamos a que cargue el cliente cuando carga el pedido.
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "cliente_id", nullable = false)
+    private Cliente cliente;
+
 }
