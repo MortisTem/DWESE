@@ -1,5 +1,6 @@
 package com.daw.crudapi.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -38,13 +39,11 @@ public class Pedido {
     private EstadoPedido estado;
 
     @Column(nullable = false)
-    private EstadoPedido dineroEntregado;
+    private BigDecimal total;
 
-    @Column(nullable = false)
-    private EstadoPedido entrega;
+    private LocalDateTime fechaEntrega;
 
-    @Column(nullable = false)
-    private EstadoPedido opinionCliente;
+    private String notas;
 
     // Forzamos a que cargue la direccion cuando carga el pedido
     @ToString.Exclude

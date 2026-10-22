@@ -1,5 +1,6 @@
 package com.daw.crudapi.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +41,9 @@ public class Cliente {
 
     @Column(nullable = false)
     private String telefono;
+
+    @Column(nullable = false)
+    private LocalDateTime fechaRegistro;
 
     // En mappedBy va el nombre del campo de la otra entidad
     // Que sirve para mapear esta
