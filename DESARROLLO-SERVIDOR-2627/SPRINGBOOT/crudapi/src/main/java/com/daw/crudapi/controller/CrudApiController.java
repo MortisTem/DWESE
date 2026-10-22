@@ -1,5 +1,6 @@
 package com.daw.crudapi.controller;
 
+import java.util.Locale;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import com.daw.crudapi.model.Cliente;
 import com.daw.crudapi.model.Direccion;
 import com.daw.crudapi.repository.ClienteRepository;
 import com.daw.crudapi.repository.DireccionRepository;
+import com.daw.crudapi.repository.PedidoRepository;
 
 @RestController // Las respuestas se devuelven como JSON
 @RequestMapping("/crudapi") // Prefijo común de todas las URL
@@ -18,13 +20,15 @@ public class CrudApiController {
     ClienteRepository repoCli;
     @Autowired
     DireccionRepository repoDir;
+    @Autowired 
+    PedidoRepository repoPed;
 
     @GetMapping
     public String index() {
         Cliente cliente = new Cliente();
         cliente.setNombre("Pepe");
         cliente.setApellidos("Garcia");
-        cliente.setEmail("otro@gmadil345.com");
+        cliente.setEmail("otro@gmail345.com");
         cliente.setTelefono("345232323");
 
         // Creamos una direccion

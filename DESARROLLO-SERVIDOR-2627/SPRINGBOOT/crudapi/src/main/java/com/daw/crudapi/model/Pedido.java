@@ -14,6 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -22,6 +23,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor 
 public class Pedido {
 
     @Id
@@ -34,6 +36,15 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private EstadoPedido estado;
+
+    @Column(nullable = false)
+    private EstadoPedido dineroEntregado;
+
+    @Column(nullable = false)
+    private EstadoPedido entrega;
+
+    @Column(nullable = false)
+    private EstadoPedido opinionCliente;
 
     // Forzamos a que cargue la direccion cuando carga el pedido
     @ToString.Exclude
