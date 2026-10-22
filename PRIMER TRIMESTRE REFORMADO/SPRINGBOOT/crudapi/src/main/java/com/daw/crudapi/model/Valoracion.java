@@ -1,5 +1,7 @@
 package com.daw.crudapi.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,10 +24,11 @@ public class Valoracion {
     private Long id;
 
     @Column(nullable = false)
-    private float nota;
+    private Integer nota;
+
+    @Column(nullable = false, length = 500)
+    private String comentario;
 
     @Column(nullable = false)
-    private String reseña;
-
-    private String fechaReseña;
+    private LocalDateTime fecha;
 }
