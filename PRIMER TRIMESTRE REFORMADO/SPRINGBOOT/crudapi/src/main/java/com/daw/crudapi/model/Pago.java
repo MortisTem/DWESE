@@ -32,7 +32,7 @@ public class Pago {
     @Column(nullable = false)
     private LocalDateTime fecha;
 
-    //Tarjeta, bizum, paypal...
+    //Método de oago elegido.
     @Column(nullable = false)
     private String metodo;
 }
