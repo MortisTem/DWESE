@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,15 +26,17 @@ public class Pago {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //Cuánto se pagó.
     @Column(nullable = false)
     private BigDecimal importe;
 
-    //Cuándo se pagó.
     @Column(nullable = false)
     private LocalDateTime fecha;
 
-    //Método de oago elegido.
     @Column(nullable = false)
     private String metodo;
+
+    @ToString.Exclude
+    @OneToOne
+    @JoinColumn(name = "pedido_id", nullable = false, unique = true)
+    private Pedido pedido;
 }

@@ -75,4 +75,13 @@ public class Cliente {
         pedido.setCliente(this);
     }
 
+    @ToString.Exclude
+    @OneToMany(mappedBy = "cliente")
+    private List<Valoracion> valoraciones = new ArrayList<>();
+
+    public void addValoracion(Valoracion valoracion) {
+        valoracion.setCliente(this);
+        valoraciones.add(valoracion);
+    }
+
 }
